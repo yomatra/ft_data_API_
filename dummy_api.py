@@ -119,6 +119,12 @@ def get_part_or_404(part_id: UUID) -> Part:
     raise HTTPException(status_code=404, detail="Part inspection not found")
 
 
+def normalize_timestamp(timestamp: datetime) -> datetime:
+    if timestamp.tzinfo is None:
+        return timestamp.replace(tzinfo=timezone.utc)
+    return timestamp
+
+
 @app.get(
     "/health",
     response_model=HealthResponse,
@@ -159,6 +165,29 @@ def get_last_parts(
     ] = 10,
 ) -> list[Part]:
     return sorted(DUMMY_PARTS, key=lambda part: part.timestamp, reverse=True)[:limit]
+
+
+@app.get(
+    "/parts/since",
+    response_model=list[Part],
+    tags=["parts"],
+    summary="List parts newer than a timestamp",
+    response_description="Part inspections produced after the requested timestamp.",
+)
+def get_parts_since(
+    timestamp: Annotated[
+        datetime,
+        Query(
+            description=(
+                "Return only part inspections with a timestamp after this value. "
+                "Timezone-less values are treated as UTC."
+            ),
+        ),
+    ] = datetime(2026, 5, 31, 8, 1, 3, tzinfo=timezone.utc),
+) -> list[Part]:
+    cutoff = normalize_timestamp(timestamp)
+    matching_parts = [part for part in DUMMY_PARTS if part.timestamp > cutoff]
+    return sorted(matching_parts, key=lambda part: part.timestamp, reverse=True)
 
 
 @app.get(

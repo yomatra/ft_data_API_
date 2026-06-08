@@ -23,6 +23,7 @@ Open:
 - `GET /health`
 - `GET /current_part`
 - `GET /parts/last?limit=10`
+- `GET /parts/since?timestamp=2026-05-31T08:01:03Z`
 - `GET /parts/{part_id}`
 - `GET /pictures?limit=10`
 - `GET /parts/{part_id}/picture`
