@@ -131,7 +131,7 @@ def health() -> HealthResponse:
 
 
 @app.get(
-    "/current_parts",
+    "/current_part",
     response_model=Part,
     tags=["parts"],
     summary="Get the current part",

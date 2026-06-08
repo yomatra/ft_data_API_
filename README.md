@@ -21,7 +21,7 @@ Open:
 ## Routes
 
 - `GET /health`
-- `GET /current_parts`
+- `GET /current_part`
 - `GET /parts/last?limit=10`
 - `GET /parts/{part_id}`
 - `GET /pictures?limit=10`
@@ -29,4 +29,3 @@ Open:
 - `GET /groups`
 - `GET /parts/{part_id}/group`
 - `GET /parts/{part_id}/state`
-# ft_data_API_
