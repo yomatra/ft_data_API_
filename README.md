@@ -37,7 +37,7 @@ The AI application and the API are started automatically during system boot.
 1. Power on the Raspberry Pi.
 2. Wait until the MQTT broker, API, database, and AI application are available.
 3. Power on the Fischertechnik station and the TXT Controller.
-4. Start the control program on the TXT Controller.
+4. Start the control program on the TXT Controller. (Files --> /Sorting-Line_AI_custom/Sorting_Line_AI.py)
 5. Place a product on the station to begin the inspection process.
 
 ## API
