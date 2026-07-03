@@ -45,10 +45,10 @@ The AI application and the API are started automatically during system boot.
 The API provides access to the stored inspection results.
 
 ```text
-- API: http://IoT-Proj-Team-MGFCS.local:8000
-- Swagger UI: http://IoT-Proj-Team-MGFCS.local:8000/docs
-- OpenAPI JSON: http://IoT-Proj-Team-MGFCS.local:8000/openapi.json
-- Health: http://IoT-Proj-Team-MGFCS.local:8000/health
+- API: http://10.215.255.19:8000
+- Swagger UI: http://10.215.255.19:8000/docs
+- OpenAPI JSON: http://10.215.255.19:8000/openapi.json
+- Health: http://10.215.255.19:8000/health
 ```
 
 ## Requirements
@@ -78,10 +78,10 @@ uvicorn dummy_api:app --reload
 
 Open:
 
-- API: http://10.215.255.19:8000
-- Swagger UI: http://10.215.255.19:8000/docs
-- OpenAPI JSON: http://10.215.255.19:8000/openapi.json
-- Health: http://10.215.255.19:8000/health
+- API: http://localhost:8000
+- Swagger UI: http://localhost:8000/docs
+- OpenAPI JSON: http://localhost:8000/openapi.json
+- Health: http://localhost:8000/health
 
 ## Routes
 
